@@ -2,33 +2,33 @@
 <html lang="zh-Hant">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hello, 我是幸運草 Clover！</title>
+    <title>幸運草 Clover｜GodiVanLife 智慧守護</title>
+
     <style>
         :root {
-            --clover-green: #74C365; /* 幸運草綠 */
-            --clover-bg: #F0F7EF;
+            --clover-green: #74C365;
+            --clover-bg: #F4F9F3;
             --warning-red: #FF5252;
         }
 
         body {
-            font-family: 'PingFang TC', 'Microsoft JhengHei', sans-serif;
+            font-family: 'PingFang TC','Microsoft JhengHei',sans-serif;
             margin: 0;
             padding: 20px;
-            background-color: var(--clover-bg);
+            background: var(--clover-bg);
             color: #333;
             text-align: center;
         }
 
         .container {
-            background-color: #ffffff;
-            border-radius: 40px;
-            box-shadow: 0 15px 35px rgba(116, 195, 101, 0.2);
-            padding: 25px;
+            background: #fff;
+            border-radius: 35px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+            padding: 28px;
             max-width: 420px;
-            margin: 10px auto;
-            border: 2px solid #FFF;
-            animation: slideUp 0.8s ease-out;
+            margin: auto;
         }
 
         .profile-img {
@@ -36,130 +36,171 @@
             height: 200px;
             border-radius: 50%;
             border: 6px solid var(--clover-green);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
             object-fit: cover;
-            margin-bottom: 15px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            margin-bottom: 18px;
         }
 
-        h1 { color: var(--clover-green); margin-bottom: 5px; font-size: 28px; }
-        .tagline { color: #888; font-size: 14px; margin-bottom: 20px; letter-spacing: 2px; }
-
-        .btn {
-            display: block;
-            padding: 16px;
-            margin: 12px 0;
-            border-radius: 35px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: all 0.3s;
-            border: none;
-            cursor: pointer;
-            width: 100%;
-            font-size: 18px;
-            box-sizing: border-box;
+        h1 {
+            color: var(--clover-green);
+            margin: 10px 0 5px;
+            font-size: 28px;
         }
 
-        .btn-sms {
-            background: #007aff;
-            color: white;
-            box-shadow: 0 6px 15px rgba(0, 122, 255, 0.3);
+        .tagline {
+            color: #777;
+            font-size: 14px;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
         }
 
-        .btn-call {
-            background: #4CAF50;
-            color: white;
-        }
-
-        .btn:active { transform: scale(0.96); }
-
-        .info-card {
-            background: #FAFAFA;
-            padding: 20px;
-            border-radius: 20px;
-            text-align: left;
-            margin: 20px 0;
-            border-left: 5px solid var(--clover-green);
-        }
-
-        .info-item { margin-bottom: 12px; font-size: 15px; line-height: 1.5; }
-        .info-item strong { color: var(--clover-green); display: block; margin-bottom: 2px; }
-        
         .warning-box {
             background: #FFF5F5;
             color: var(--warning-red);
-            padding: 15px;
+            padding: 14px;
             border-radius: 15px;
             font-size: 14px;
-            border: 1px solid #FFEBEB;
             margin-bottom: 20px;
             font-weight: bold;
         }
 
-        .instagram-link {
-            display: block;
-            margin: 20px auto;
-            padding: 12px;
-            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
-            color: white;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: bold;
-            font-size: 16px;
+        .info-card {
+            background: #FAFAFA;
+            padding: 18px;
+            border-radius: 18px;
+            text-align: left;
+            margin-bottom: 20px;
+            border-left: 5px solid var(--clover-green);
         }
 
-        @keyframes slideUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
+        .info-item {
+            margin-bottom: 10px;
+            font-size: 15px;
+            line-height: 1.5;
+        }
+
+        .info-item strong {
+            color: var(--clover-green);
+            display: block;
+        }
+
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            margin: 12px 0;
+            border-radius: 30px;
+            border: none;
+            font-size: 17px;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+            color: white;
+            transition: 0.2s ease;
+        }
+
+        .btn-sms {
+            background: #007aff;
+        }
+
+        .btn-call {
+            background: #4CAF50;
+        }
+
+        .btn:active {
+            transform: scale(0.97);
+        }
+
+        .instagram-link {
+            display: block;
+            margin-top: 18px;
+            padding: 12px;
+            background: linear-gradient(45deg,#f09433,#dc2743,#bc1888);
+            color: white;
+            text-decoration: none;
+            border-radius: 40px;
+            font-weight: bold;
+        }
+
+        footer {
+            margin-top: 25px;
+            font-size: 11px;
+            color: #aaa;
+            letter-spacing: 2px;
         }
     </style>
 </head>
+
 <body>
 
-    <div class="container">
-        <img src="https://instagram.fkhh1-2.fna.fbcdn.net/v/t51.71878-15/631751509_2174713896689413_7020920104853334548_n.jpg?stp=dst-jpg_e15_tt6&_nc_cat=107&ig_cache_key=MzgzMDA3NTA4ODAzNjgxNDMxOA%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjY0MHgxMTM2LnNkci5DMyJ9&_nc_ohc=uTGWRJxYoxUQ7kNvwF3s8Rr&_nc_oc=Adm81Y0C3g3GdKozOdM6pnaEAt6k6BvHFKNgMwE06cl_g2wUtaIQSrTzwGA1Jdu9nGU&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=instagram.fkhh1-2.fna&_nc_gid=xBtC_MSBYe_SDCnCOihZUg&oh=00_AfsC5wdvtDDb-8jPoeTaO_h9i1Hy1Oyibi6S0CfahdUqxw&oe=699DAEEE" alt="幸運草 Clover" class="profile-img">
-        
-        <h1>我是幸運草 Clover</h1>
-        <p class="tagline">GodiVanLife 智慧守護</p>
+<div class="container">
 
-        <div class="warning-box">
-            ⚠️ 緊張時會一直吠叫，我只是膽小長個不長膽，請溫柔對待我～
-        </div>
+    <!-- 圖片讀取 GitHub images 資料夾 -->
+    <img src="images/clover.jpg" alt="幸運草 Clover" class="profile-img">
 
-        <div class="info-card">
-            <div class="info-item">💖 <strong>關於我：</strong>很親人（尤其美女🤣），看到男生會有點怕怕的。</div>
-            <div class="info-item">🐕 <strong>社交：</strong>不太親狗（男狗狗請不要靠近，女生狗狗OK）。</div>
-            <div class="info-item">🍗 <strong>興趣：</strong>最愛玩玩具跟吃肉肉了！</div>
-        </div>
+    <h1>我是幸運草 Clover</h1>
+    <p class="tagline">GodiVanLife 智慧守護</p>
 
-        <button class="btn btn-sms" onclick="sendSMSLocation()">📍 即時定位</button>
-        
-        <a href="tel:0936760420" class="btn btn-call">📞 撥打給主人</a>
-
-        <a href="https://www.instagram.com/clover_20200825_clover?igsh=M3ljOXY1dGVhZTlj&utm_source=qr" target="_blank" class="instagram-link">
-            看我的日常 IG 📸
-        </a>
-        
-        <p style="font-size: 11px; color: #CCC; margin-top: 30px; letter-spacing: 2px;">
-            POWERED BY GODIVANLIFE
-        </p>
+    <div class="warning-box">
+        ⚠️ 緊張時會一直吠叫，我只是膽小長個不長膽，請溫柔對待我～
     </div>
 
-    <script>
-        function sendSMSLocation() {
-            if (navigator.geolocation) {
-                navigator.geolocation.getCurrentPosition((position) => {
-                    const lat = position.coords.latitude;
-                    const lng = position.coords.longitude;
-                    const mapUrl = "https://www.google.com/maps?q=" + lat + "," + lng;
-                    const message = encodeURIComponent("【尋寵通報】我發現了幸運草！目前位置：" + mapUrl);
-                    window.location.href = "sms:0936760420?body=" + message;
-                }, () => {
-                    window.location.href = "sms:0936760420?body=" + encodeURIComponent("【尋寵通報】我發現了幸運草，請與我聯繫。");
-                });
-            } else {
-                window.location.href = "sms:0936760420?body=" + encodeURIComponent("【尋寵通報】我發現了幸運草，請與我聯繫。");
-            }
-        }
-    </script>
+    <div class="info-card">
+        <div class="info-item">
+            💖 <strong>關於我：</strong>
+            很親人（尤其美女🤣），看到男生會有點怕怕的。
+        </div>
+
+        <div class="info-item">
+            🐕 <strong>社交：</strong>
+            不太親狗（男狗狗請不要靠近，女生狗狗OK）。
+        </div>
+
+        <div class="info-item">
+            🍗 <strong>興趣：</strong>
+            最愛玩玩具跟吃肉肉了！
+        </div>
+    </div>
+
+    <button class="btn btn-sms" onclick="sendSMSLocation()">
+        📍 即時定位通報
+    </button>
+
+    <a href="tel:0936760420" class="btn btn-call">
+        📞 撥打給主人
+    </a>
+
+    <a href="https://www.instagram.com/clover_20200825_clover" 
+       target="_blank" 
+       class="instagram-link">
+       看我的日常 IG 📸
+    </a>
+
+    <footer>
+        POWERED BY GODIVANLIFE
+    </footer>
+
+</div>
+
+<script>
+function sendSMSLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(function(position) {
+            const lat = position.coords.latitude;
+            const lng = position.coords.longitude;
+            const mapUrl = "https://www.google.com/maps?q=" + lat + "," + lng;
+            const message = encodeURIComponent("【尋寵通報】我發現了幸運草！目前位置：" + mapUrl);
+            window.location.href = "sms:0936760420?body=" + message;
+        }, function() {
+            window.location.href = "sms:0936760420?body=" + 
+                encodeURIComponent("【尋寵通報】我發現了幸運草，請與我聯繫。");
+        });
+    } else {
+        window.location.href = "sms:0936760420?body=" + 
+            encodeURIComponent("【尋寵通報】我發現了幸運草，請與我聯繫。");
+    }
+}
+</script>
+
 </body>
 </html>
