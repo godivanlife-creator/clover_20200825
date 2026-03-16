@@ -1,77 +1,85 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>クローバー Clover｜GodiVanLife</title>
+
+<title>Clover | GodiVanLife</title>
 
 <style>
+
 :root{
---clover-green:#74C365;
---clover-bg:#F4F9F3;
---warning-red:#FF5252;
+--green:#74C365;
+--bg:#F4F9F3;
+--warn:#FF5252;
 }
 
 body{
-font-family:'Hiragino Kaku Gothic Pro','Yu Gothic','Meiryo',sans-serif;
+font-family:Arial,'PingFang TC','Microsoft JhengHei',sans-serif;
 margin:0;
 padding:20px;
-background:var(--clover-bg);
+background:var(--bg);
 text-align:center;
 }
 
 .container{
-background:#fff;
+background:white;
 border-radius:35px;
-box-shadow:0 15px 35px rgba(0,0,0,0.08);
 padding:28px;
 max-width:420px;
 margin:auto;
+box-shadow:0 15px 35px rgba(0,0,0,0.08);
 }
 
 .profile-img{
 width:200px;
 height:200px;
 border-radius:50%;
-border:6px solid var(--clover-green);
+border:6px solid var(--green);
 object-fit:cover;
 margin-bottom:18px;
 }
 
+.language-switch{
+margin-bottom:10px;
+}
+
+.lang-btn{
+padding:6px 12px;
+margin:3px;
+border:none;
+border-radius:15px;
+background:#eee;
+cursor:pointer;
+}
+
 h1{
-color:var(--clover-green);
-font-size:26px;
+color:var(--green);
 }
 
-.tagline{
-color:#777;
-font-size:14px;
-margin-bottom:20px;
-}
-
-.warning-box{
+.warning{
 background:#FFF5F5;
-color:var(--warning-red);
+color:var(--warn);
 padding:14px;
 border-radius:15px;
 margin-bottom:20px;
 font-weight:bold;
 }
 
-.info-card{
+.info{
 background:#FAFAFA;
 padding:18px;
 border-radius:18px;
 text-align:left;
 margin-bottom:20px;
-border-left:5px solid var(--clover-green);
+border-left:5px solid var(--green);
 line-height:1.6;
 }
 
 .btn{
 display:block;
 width:100%;
-padding:15px;
+padding:16px;
 margin:12px 0;
 border-radius:30px;
 border:none;
@@ -82,12 +90,12 @@ text-decoration:none;
 color:white;
 }
 
-.btn-ig{
-background:linear-gradient(45deg,#f09433,#dc2743,#bc1888);
-}
-
 .btn-location{
 background:#007aff;
+}
+
+.btn-ig{
+background:linear-gradient(45deg,#f09433,#dc2743,#bc1888);
 }
 
 footer{
@@ -95,6 +103,7 @@ margin-top:25px;
 font-size:11px;
 color:#aaa;
 }
+
 </style>
 </head>
 
@@ -102,46 +111,29 @@ color:#aaa;
 
 <div class="container">
 
+<div class="language-switch">
+
+<button class="lang-btn" onclick="setLang('zh')">中文</button>
+<button class="lang-btn" onclick="setLang('ja')">日本語</button>
+<button class="lang-btn" onclick="setLang('en')">English</button>
+
+</div>
+
 <img src="https://raw.githubusercontent.com/godivanlife-creator/clover_20200825/main/00DD3F10-D2D6-4E4A-84F2-39B0C4FD9EA5.JPG"
-alt="Clover"
 class="profile-img">
 
-<h1>クローバー Clover</h1>
-<p class="tagline">GodiVanLife ペット守護タグ</p>
+<h1>Clover</h1>
 
-<div class="warning-box">
-⚠️ 緊張すると吠えることがあります。  
-優しく接してください。
-</div>
+<div class="warning" id="warning"></div>
 
-<div class="info-card">
+<div class="info" id="info"></div>
 
-💖 <strong>性格</strong><br>
-とても人懐っこいです（特に女性が大好きです🤣）<br>
-男性には少し怖がることがあります。
-
-<br><br>
-
-🐕 <strong>犬との関係</strong><br>
-あまり犬と仲良くできません。<br>
-男の子の犬は近づかないでください。
-
-<br><br>
-
-🍗 <strong>好きなこと</strong><br>
-おもちゃで遊ぶこととお肉が大好きです。
-
-</div>
-
-<button class="btn btn-location" onclick="copyLocation()">
-📍 現在地をコピー
-</button>
+<button class="btn btn-location" onclick="sendLocation()" id="locationBtn"></button>
 
 <a href="https://www.instagram.com/clover_20200825_clover"
 target="_blank"
-class="btn btn-ig">
-📸 Instagramで連絡する
-</a>
+class="btn btn-ig"
+id="igBtn"></a>
 
 <footer>
 POWERED BY GODIVANLIFE
@@ -151,9 +143,50 @@ POWERED BY GODIVANLIFE
 
 <script>
 
-function copyLocation(){
+const text={
 
-if(navigator.geolocation){
+zh:{
+warning:"⚠️ 緊張時可能會吠叫，請溫柔接近。",
+info:"💖 很親人（尤其美女🤣）\n\n🐕 不太親狗\n\n🍗 喜歡玩玩具和吃肉",
+location:"📍 傳送我的位置",
+ig:"📸 用 IG 聯絡主人"
+},
+
+ja:{
+warning:"⚠️ 緊張すると吠えることがあります。優しく接してください。",
+info:"💖 とても人懐っこいです（特に女性が好き🤣）\n\n🐕 犬は少し苦手\n\n🍗 おもちゃとお肉が大好き",
+location:"📍 位置を送る",
+ig:"📸 Instagramで連絡"
+},
+
+en:{
+warning:"⚠️ I may bark when nervous. Please approach gently.",
+info:"💖 Very friendly (especially loves girls 🤣)\n\n🐕 Not very friendly with other dogs\n\n🍗 Loves toys and meat",
+location:"📍 Send my location",
+ig:"📸 Contact via Instagram"
+}
+
+};
+
+function setLang(lang){
+
+document.getElementById("warning").innerText=text[lang].warning;
+document.getElementById("info").innerText=text[lang].info;
+document.getElementById("locationBtn").innerText=text[lang].location;
+document.getElementById("igBtn").innerText=text[lang].ig;
+
+}
+
+setLang('ja');
+
+function sendLocation(){
+
+if(!navigator.geolocation){
+
+alert("Location not available");
+return;
+
+}
 
 navigator.geolocation.getCurrentPosition(function(position){
 
@@ -164,11 +197,9 @@ const map="https://www.google.com/maps?q="+lat+","+lng;
 
 navigator.clipboard.writeText(map);
 
-alert("現在地リンクをコピーしました。Instagramのメッセージで送ってください。");
+window.open("https://www.instagram.com/clover_20200825_clover","_blank");
 
 });
-
-}
 
 }
 
